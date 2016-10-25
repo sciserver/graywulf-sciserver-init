@@ -20,6 +20,14 @@ systemctl enable rabbitmq-server.service
 systemctl start rabbitmq-server.service	
 iptables -I INPUT 1 -p tcp --dport 5672 -j ACCEPT
 
+# install memcached and rsync etc.
+
+yum -y install memcached xfsprogs rsync
+systemctl enable memcached.service
+systemctl start memcached.service
+systemctl enable rsyncd.service
+systemctl start rsyncd.service
+
 # openstack repo
 
 sudo yum install -y https://www.rdoproject.org/repos/rdo-release.rpm

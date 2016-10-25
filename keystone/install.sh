@@ -1,7 +1,5 @@
-source ../config.sh
-
 yum -y install openstack-keystone
-yum -y install python-openstackclient
+yum -y install python-keystoneclient python-keystonemiddleware python-openstackclient
 
 # configure apache
 

@@ -1,10 +1,7 @@
-. ../config.sh
-. ../lib.sh
-
 # generate config file
 
 cp /etc/keystone/keystone.conf /etc/keystone/keystone.conf.orig
-subsenv SS_OS_ keystone.conf > /etc/keystone/keystone.conf
+subsenv SS_OS_ keystone/keystone.conf > /etc/keystone/keystone.conf
 
 # create database
 
@@ -18,8 +15,8 @@ keystone-manage db_sync
 
 # create admin config file and source it
 
-subenv SS_OS_KEYSTONE_TEST test-openrc.sh > $HOME/test-openrc.sh
-subenv SS_OS_KEYSTONE_ADMIN admin-openrc.sh > $HOME/admin-openrc.sh
+subsenv SS_OS_KEYSTONE_TEST keystone/test-openrc.sh > $HOME/test-openrc.sh
+subsenv SS_OS_KEYSTONE_ADMIN keystone/admin-openrc.sh > $HOME/admin-openrc.sh
 
 source $HOME/admin-openrc.sh
 

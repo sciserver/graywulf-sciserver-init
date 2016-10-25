@@ -1,0 +1,2 @@
+swift-init all start
+

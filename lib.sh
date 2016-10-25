@@ -1,4 +1,4 @@
-function subsenvcmd() {
+function subsenvcmd {
   prefix=$1
   infile=$2
 
@@ -9,7 +9,7 @@ function subsenvcmd() {
   done
 }
 
-function subsenv() {
+function subsenv {
   eval $(subsenvcmd $1 $2)
 }
 
